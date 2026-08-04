@@ -1,0 +1,417 @@
+/* ============================
+   Dashboard.css
+   Dark industrial AI monitoring theme
+   ============================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0a0e14;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  background: #0a0e14;
+  color: #ffffff;
+  padding: 28px 36px 60px 36px;
+}
+
+/* ============================
+   HEADER
+   ============================ */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #232838;
+  margin-bottom: 26px;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.header-left p {
+  margin: 6px 0 0 0;
+  font-size: 13.5px;
+  color: #94a3b8;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ============================
+   ERROR / LOADING STATES
+   ============================ */
+
+.error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  margin-bottom: 22px;
+}
+
+.loading-state {
+  color: #94a3b8;
+  font-size: 15px;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* ============================
+   ROW 2: METRIC CARDS
+   ============================ */
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.metric-card {
+  background: #131720;
+  border: 1px solid #232838;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+}
+
+.metric-header h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-card h1 {
+  margin: 12px 0 4px 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.metric-card p {
+  margin: 0;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+/* ============================
+   ROW 3: CHARTS
+   ============================ */
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.chart-card {
+  background: #131720;
+  border: 1px solid #232838;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.chart-title {
+  color: #e2e8f0;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ============================
+   ROW 4: BOTTOM SECTION
+   ============================ */
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Generic reusable card wrapper (used by ModelStatus, AlertPanel, DeviceCard, Fault panel) */
+.component-card {
+  background: #131720;
+  border: 1px solid #232838;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.component-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================
+   MODEL STATUS TABLE
+   ============================ */
+
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.model-table thead th {
+  text-align: left;
+  color: #64748b;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #232838;
+}
+
+.model-table tbody td {
+  padding: 10px 0;
+  color: #e2e8f0;
+  border-bottom: 1px solid #1a1e2a;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.status-badge.normal {
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+}
+
+.status-badge.anomaly {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+/* ============================
+   ALERT PANEL
+   ============================ */
+
+.no-alerts {
+  color: #64748b;
+  font-size: 13.5px;
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.alert-card {
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-left: 3px solid #64748b;
+  background: #0f1420;
+}
+
+.alert-card:last-child {
+  margin-bottom: 0;
+}
+
+.alert-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.alert-sub {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+.alert-time {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.alert-card.low {
+  border-left-color: #4ade80;
+}
+
+.alert-card.medium {
+  border-left-color: #f59e0b;
+}
+
+.alert-card.high {
+  border-left-color: #f97316;
+}
+
+.alert-card.critical {
+  border-left-color: #ef4444;
+}
+
+/* Scrollable alerts list (component-card holding AlertPanel content) */
+.left-column .component-card:nth-of-type(2),
+.left-column .component-card + .component-card {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+/* ============================
+   DEVICE CARD
+   ============================ */
+
+.device-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  color: #e2e8f0;
+  font-size: 13.5px;
+  border-bottom: 1px solid #1a1e2a;
+}
+
+.device-row:last-of-type {
+  border-bottom: none;
+}
+
+.device-row svg {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.device-health {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.device-health.low {
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+}
+
+.device-health.medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.device-health.high {
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+}
+
+.device-health.critical {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+/* ============================
+   CURRENT FAULT PANEL
+   ============================ */
+
+.fault-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fault-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1a1e2a;
+}
+
+.fault-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fault-label {
+  font-size: 12.5px;
+  color: #94a3b8;
+}
+
+.fault-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 1200px) {
+  .metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .metrics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-container {
+    padding: 20px 16px 40px 16px;
+  }
+}
